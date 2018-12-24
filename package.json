@@ -1,6 +1,6 @@
 {
   "name": "@~sunsimiao/html-to-draftjs",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "dist/html-to-draftjs.js",
   "repository": {
     "type": "git",
