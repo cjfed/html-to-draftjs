@@ -37,12 +37,18 @@ function genFragment(
   if (customChunkGenerator) {
     const value = customChunkGenerator(nodeName, node);
     if (value) {
+      
       const entityId = Entity.__create(
         value.type,
         value.mutability,
         value.data || {},
-      );
-      return { chunk: getAtomicBlockChunk(entityId) };
+        );
+
+        if (value.type === 'FORMULA') {
+          return {chunk: getAtomicBlockChunk(entityId, ' ')}
+        }
+
+        return { chunk: getAtomicBlockChunk(entityId) };
     }
   }
 
